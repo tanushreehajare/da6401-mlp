@@ -7,7 +7,7 @@ The assignment explores optimization techniques, activation functions, loss func
 ## Repository
 
 GitHub Repository:
-https://github.com/tanushreehajare/da6401-mlp-assignment-1.git
+https://github.com/tanushreehajare/da6401-mlp
 
 ## Weights & Biases Report
 
