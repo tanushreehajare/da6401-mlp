@@ -38,5 +38,5 @@ parameters:
   hidden_size:
     values: [64, 128]
 
-  num_hidden_layers:
+  num_layers:
     values: [1, 2, 3]

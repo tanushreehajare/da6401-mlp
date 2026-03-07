@@ -43,7 +43,7 @@ def parse_arguments():
     
     parser.add_argument("-sz", "--hidden_size", type=int, required=True)
 
-    parser.add_argument("-nhl", "--num_hidden_layers", type=int, required=True)
+    parser.add_argument("-nhl", "--num_layers", type=int, required=True)
 
     parser.add_argument("-a", "--activation", type=str, required=True,
                         choices=["relu", "sigmoid", "tanh"])

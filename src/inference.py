@@ -33,7 +33,7 @@ def parse_arguments():
                         choices=["mnist", "fashion_mnist"])
     parser.add_argument("--batch_size", type=int, required=True)
 
-    parser.add_argument("--num_hidden_layers", type=int, required=True)
+    parser.add_argument("--num_layers", type=int, required=True)
     parser.add_argument("--hidden_size", type=int, required=True)
 
     parser.add_argument("--activation", type=str, required=True,

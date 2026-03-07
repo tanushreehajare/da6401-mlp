@@ -20,8 +20,8 @@ class NeuralNetwork:
         Args:
             cli_args: Command-line arguments for configuring the network
         """
-        self.num_hidden_layers = cli_args.num_hidden_layers
-        self.hidden_sizes = [cli_args.hidden_size] * cli_args.num_hidden_layers
+        self.num_layers = cli_args.num_layers
+        self.hidden_sizes = [cli_args.hidden_size] * cli_args.num_layers
         self.activation_name = cli_args.activation
         self.loss_name = cli_args.loss
         self.learning_rate = cli_args.learning_rate
