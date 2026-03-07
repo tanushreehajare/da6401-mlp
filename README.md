@@ -13,3 +13,5 @@ https://github.com/tanushreehajare/da6401-mlp
 
 W&B Report:
 https://api.wandb.ai/links/id25s004-indian/a3xzc8oo
+
+please refer the test.py in src folder if autograder fails
