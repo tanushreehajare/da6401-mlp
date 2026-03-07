@@ -1,0 +1,47 @@
+{
+  "os":  "Windows-11-10.0.26200-SP0",
+  "python":  "CPython 3.14.3",
+  "startedAt":  "2026-03-07T15:43:26.171389Z",
+  "args":  [
+    "--activation=relu",
+    "--batch_size=64",
+    "--dataset=mnist",
+    "--epochs=10",
+    "--hidden_size=64",
+    "--learning_rate=0.0015",
+    "--loss=cross_entropy",
+    "--num_hidden_layers=1",
+    "--optimizer=sgd",
+    "--weight_decay=0",
+    "--weight_init=xavier"
+  ],
+  "program":  "C:\\Users\\bsvp\\Downloads\\da6401_assignment_1-main\\da6401_assignment_1-main\\da6401_assignment_1-main\\src\\train.py",
+  "codePath":  "src\\train.py",
+  "codePathLocal":  "src\\train.py",
+  "email":  "id25s004@smail.iitm.ac.in",
+  "root":  "C:\\Users\\bsvp\\Downloads\\da6401_assignment_1-main\\da6401_assignment_1-main\\da6401_assignment_1-main",
+  "host":  "DESKTOP",
+  "executable":  "C:\\Users\\bsvp\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+  "cpu_count":  8,
+  "cpu_count_logical":  16,
+  "gpu":  "GeForce GT 710",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "911430643712",
+      "used":  "390926434304"
+    }
+  },
+  "memory":  {
+    "total":  "34113650688"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "GeForce GT 710",
+      "architecture":  "Kepler",
+      "uuid":  "GPU-51a63ef1-f31f-4edd-991a-991b42ca403e"
+    }
+  ],
+  "cudaVersion":  "11.1",
+  "writerId":  "zbrsgd245quirj1qf2nzoo4d26y5xz45"
+}

@@ -1,0 +1,11 @@
+{"time":"2026-03-07T21:20:09.3385409+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-07T21:20:09.7447782+05:30","level":"INFO","msg":"stream: created new stream","id":"jmlte2oi"}
+{"time":"2026-03-07T21:20:09.7455208+05:30","level":"INFO","msg":"handler: started","stream_id":"jmlte2oi"}
+{"time":"2026-03-07T21:20:09.7499541+05:30","level":"INFO","msg":"stream: started","id":"jmlte2oi"}
+{"time":"2026-03-07T21:20:09.7499541+05:30","level":"INFO","msg":"writer: started","stream_id":"jmlte2oi"}
+{"time":"2026-03-07T21:20:09.7499541+05:30","level":"INFO","msg":"sender: started","stream_id":"jmlte2oi"}
+{"time":"2026-03-07T21:21:00.031583+05:30","level":"INFO","msg":"stream: closing","id":"jmlte2oi"}
+{"time":"2026-03-07T21:21:00.9218854+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-07T21:21:02.2287334+05:30","level":"INFO","msg":"handler: closed","stream_id":"jmlte2oi"}
+{"time":"2026-03-07T21:21:02.2294891+05:30","level":"INFO","msg":"sender: closed","stream_id":"jmlte2oi"}
+{"time":"2026-03-07T21:21:02.2294891+05:30","level":"INFO","msg":"stream: closed","id":"jmlte2oi"}

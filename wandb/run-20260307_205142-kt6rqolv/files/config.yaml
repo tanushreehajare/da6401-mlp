@@ -1,0 +1,95 @@
+_wandb:
+    value:
+        cli_version: 0.25.0
+        e:
+            gklx32ycztq3aae3t71ehp6ggdkdzx9n:
+                args:
+                    - -d
+                    - fashion_mnist
+                    - -e
+                    - "15"
+                    - -b
+                    - "64"
+                    - -o
+                    - rmsprop
+                    - -lr
+                    - "0.001"
+                    - -wd
+                    - "0.0001"
+                    - -nhl
+                    - "3"
+                    - -sz
+                    - "128"
+                    - -a
+                    - relu
+                    - -l
+                    - cross_entropy
+                    - -wi
+                    - xavier
+                codePath: src\train.py
+                codePathLocal: src\train.py
+                cpu_count: 8
+                cpu_count_logical: 16
+                cudaVersion: "11.1"
+                disk:
+                    /:
+                        total: "911430643712"
+                        used: "390575906816"
+                email: id25s004@smail.iitm.ac.in
+                executable: C:\Users\bsvp\AppData\Local\Programs\Python\Python314\python.exe
+                gpu: GeForce GT 710
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Kepler
+                      name: GeForce GT 710
+                      uuid: GPU-51a63ef1-f31f-4edd-991a-991b42ca403e
+                host: DESKTOP
+                memory:
+                    total: "34113650688"
+                os: Windows-11-10.0.26200-SP0
+                program: C:\Users\bsvp\Downloads\da6401_assignment_1-main\da6401_assignment_1-main\da6401_assignment_1-main\src\train.py
+                python: CPython 3.14.3
+                root: C:\Users\bsvp\Downloads\da6401_assignment_1-main\da6401_assignment_1-main\da6401_assignment_1-main
+                startedAt: "2026-03-07T15:21:42.718684Z"
+                writerId: gklx32ycztq3aae3t71ehp6ggdkdzx9n
+        m: []
+        python_version: 3.14.3
+        t:
+            "1":
+                - 5
+                - 53
+            "2":
+                - 5
+                - 53
+            "3":
+                - 16
+            "4": 3.14.3
+            "5": 0.25.0
+            "8":
+                - 3
+            "12": 0.25.0
+            "13": windows-amd64
+activation:
+    value: relu
+batch_size:
+    value: 64
+dataset:
+    value: fashion_mnist
+epochs:
+    value: 15
+hidden_size:
+    value: 128
+learning_rate:
+    value: 0.001
+loss:
+    value: cross_entropy
+num_hidden_layers:
+    value: 3
+optimizer:
+    value: rmsprop
+wandb_project:
+    value: sweeps-mlp-final
+weight_decay:
+    value: 0.0001
+weight_init:
+    value: xavier

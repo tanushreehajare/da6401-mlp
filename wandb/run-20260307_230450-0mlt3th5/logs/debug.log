@@ -1,0 +1,22 @@
+2026-03-07 23:04:50,374 INFO    MainThread:9932 [wandb_setup.py:_flush():81] Current SDK version is 0.25.0
+2026-03-07 23:04:50,374 INFO    MainThread:9932 [wandb_setup.py:_flush():81] Configure stats pid to 9932
+2026-03-07 23:04:50,374 INFO    MainThread:9932 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2026-03-07 23:04:50,374 INFO    MainThread:9932 [wandb_init.py:setup_run_log_directory():717] Logging user logs to C:\Users\bsvp\Downloads\da6401_assignment_1-main\da6401_assignment_1-main\da6401_assignment_1-main\wandb\run-20260307_230450-0mlt3th5\logs\debug.log
+2026-03-07 23:04:50,374 INFO    MainThread:9932 [wandb_init.py:setup_run_log_directory():718] Logging internal logs to C:\Users\bsvp\Downloads\da6401_assignment_1-main\da6401_assignment_1-main\da6401_assignment_1-main\wandb\run-20260307_230450-0mlt3th5\logs\debug-internal.log
+2026-03-07 23:04:50,374 INFO    MainThread:9932 [wandb_init.py:init():844] calling init triggers
+2026-03-07 23:04:50,375 INFO    MainThread:9932 [wandb_init.py:init():849] wandb.init called with sweep_config: {}
+config: {'_wandb': {}}
+2026-03-07 23:04:50,375 INFO    MainThread:9932 [wandb_init.py:init():892] starting backend
+2026-03-07 23:04:52,648 INFO    MainThread:9932 [wandb_init.py:init():895] sending inform_init request
+2026-03-07 23:04:52,692 INFO    MainThread:9932 [wandb_init.py:init():903] backend started and connected
+2026-03-07 23:04:52,718 INFO    MainThread:9932 [wandb_init.py:init():973] updated telemetry
+2026-03-07 23:04:52,719 INFO    MainThread:9932 [wandb_init.py:init():997] communicating run to backend with 90.0 second timeout
+2026-03-07 23:04:53,576 INFO    MainThread:9932 [wandb_init.py:init():1042] starting run threads in backend
+2026-03-07 23:04:53,664 INFO    MainThread:9932 [wandb_run.py:_console_start():2524] atexit reg
+2026-03-07 23:04:53,665 INFO    MainThread:9932 [wandb_run.py:_redirect():2373] redirect: wrap_raw
+2026-03-07 23:04:53,665 INFO    MainThread:9932 [wandb_run.py:_redirect():2442] Wrapping output streams.
+2026-03-07 23:04:53,665 INFO    MainThread:9932 [wandb_run.py:_redirect():2465] Redirects installed.
+2026-03-07 23:04:53,670 INFO    MainThread:9932 [wandb_init.py:init():1082] run started, returning control to user process
+2026-03-07 23:05:07,242 INFO    MainThread:9932 [wandb_run.py:_config_callback():1403] config_cb ('_wandb', 'visualize', 'confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'panelDefId': 'wandb/confusion_matrix/v1', 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': 'Confusion Matrix Curve'}, 'transform': {'name': 'tableWithLeafColNames'}, 'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'confusion_matrix_table'}], 'fields': []}]}]}}} None
+2026-03-07 23:05:10,518 INFO    wandb-AsyncioManager-main:9932 [service_client.py:_forward_responses():134] Reached EOF.
+2026-03-07 23:05:10,519 INFO    wandb-AsyncioManager-main:9932 [mailbox.py:close():155] Closing mailbox, abandoning 3 handles.

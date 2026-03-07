@@ -1,0 +1,11 @@
+{"time":"2026-03-07T21:21:13.130758+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-07T21:21:13.5292322+05:30","level":"INFO","msg":"stream: created new stream","id":"vm48tvia"}
+{"time":"2026-03-07T21:21:13.5292322+05:30","level":"INFO","msg":"handler: started","stream_id":"vm48tvia"}
+{"time":"2026-03-07T21:21:13.5332937+05:30","level":"INFO","msg":"stream: started","id":"vm48tvia"}
+{"time":"2026-03-07T21:21:13.533813+05:30","level":"INFO","msg":"writer: started","stream_id":"vm48tvia"}
+{"time":"2026-03-07T21:21:13.533813+05:30","level":"INFO","msg":"sender: started","stream_id":"vm48tvia"}
+{"time":"2026-03-07T21:21:50.7707549+05:30","level":"INFO","msg":"stream: closing","id":"vm48tvia"}
+{"time":"2026-03-07T21:21:51.3903903+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-07T21:21:52.4304542+05:30","level":"INFO","msg":"handler: closed","stream_id":"vm48tvia"}
+{"time":"2026-03-07T21:21:52.4304542+05:30","level":"INFO","msg":"sender: closed","stream_id":"vm48tvia"}
+{"time":"2026-03-07T21:21:52.4304542+05:30","level":"INFO","msg":"stream: closed","id":"vm48tvia"}

@@ -1,0 +1,7 @@
+
+===== Evaluation Results =====
+Loss      : 0.1350
+Accuracy  : 0.9743
+Precision : 0.9744
+Recall    : 0.9742
+F1 Score  : 0.9742

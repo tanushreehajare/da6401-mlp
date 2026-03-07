@@ -1,0 +1,14 @@
+{
+    "wandb_project": "sweeps-mlp-final",
+    "dataset": "mnist",
+    "epochs": 10,
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "optimizer": "rmsprop",
+    "hidden_size": 128,
+    "num_hidden_layers": 3,
+    "activation": "tanh",
+    "loss": "mse",
+    "weight_init": "xavier",
+    "weight_decay": 0.0
+}
