@@ -1,22 +1,14 @@
-# Assignment 1: Multi-Layer Perceptron for Image Classification
+# DA6401 Assignment 1: Multi-Layer Perceptron for Image Classification
 
-## Overview
+This project implements a configurable Multi-Layer Perceptron (MLP) from scratch using **NumPy** to classify the **MNIST** and **Fashion-MNIST** datasets.  
+The assignment explores optimization techniques, activation functions, loss functions, weight initialization strategies, and hyperparameter tuning using **Weights & Biases (W&B)**.
 
-This assignment requires you to implement a neural network from scratch using only NumPy. You will build all components including layers, activations, optimizers, and loss functions, then train your network on MNIST or Fashion-MNIST datasets.
+## Repository
 
-## Learning Objectives
+GitHub Repository:  
+https://github.com/tanushreehajare/da6401-mlp
 
-- Understand forward and backward propagation
-- Implement gradient computation manually
-- Implement various optimizers (SGD, Momentum, Adam, Nadam)
-- Work with activation functions and their derivatives
-- Train and evaluate neural networks
-- Log experiments using Weights & Biases
+## Weights & Biases Report
 
-## Contact
-
-For questions or issues, please contact the teaching staff or post on the course forum.
-
----
-
-Good luck with your implementation!
+W&B Report:  
+https://api.wandb.ai/links/id25s004-indian/a3xzc8oo
