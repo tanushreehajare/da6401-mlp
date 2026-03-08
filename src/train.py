@@ -223,6 +223,13 @@ def main():
     else:
         print(f"Model F1 ({test_f1:.4f}) did not beat current best ({best_score:.4f}).")
 
+    # Print run URL then call finish() so W&B marks the run as complete
+    # (without this the dashboard shows runs as 'Running' even after they end)
+    run = wandb.run
+    if run is not None:
+        print(f"W&B run: {run.url}")
+    wandb.finish()
+
 
 if __name__ == "__main__":
     main()
