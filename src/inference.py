@@ -136,7 +136,7 @@ def evaluate_model(model, X_test, y_test, y_test_onehot):
 
     wandb.log({"misclassified_examples": table})
 
-    loss = model.loss_fn.forward(y_test_onehot, probs)
+    loss = model.loss_fn.forward(y_test_onehot, logits)
 
     results = {
         "logits": logits,
