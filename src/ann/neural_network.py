@@ -120,7 +120,7 @@ class NeuralNetwork:
         """
 
         # gradient of loss wrt logits
-        dZ = self.loss_fn.derivative(y_true, y_pred)
+        dZ = self.loss_fn.derivative(y_true, Softmax.forward(y_pred))
 
         grad_W_list = []
         grad_b_list = []
@@ -182,7 +182,6 @@ class NeuralNetwork:
                 y_batch = y_train[i:i+batch_size]
 
                 logits = self.forward(X_batch)
-                y_pred = Softmax.forward(logits)
 
                 # Q2.5 Activation histogram
                 if epoch == 0 and i < 50 and len(self.A_cache) > 1:
@@ -191,10 +190,10 @@ class NeuralNetwork:
                         wandb.Histogram(self.A_cache[1])
                     })
 
-                loss = self.loss_fn.forward(y_batch, y_pred)
+                loss = self.loss_fn.forward(y_batch, Softmax.forward(logits))
                 epoch_loss += loss
 
-                self.backward(y_batch, y_pred)
+                self.backward(y_batch, logits)
 
                 grad_norm = np.linalg.norm(self.layers[0].grad_W)
                 wandb.log({"grad_norm_layer1": grad_norm})
@@ -240,8 +239,7 @@ def gradient_check(model, X, y, epsilon=1e-6):
     """
     # Forward
     logits = model.forward(X)
-    y_pred = Softmax.forward(logits)
-    model.backward(y, y_pred)
+    model.backward(y, logits)
 
     layer = model.layers[0]  # check first layer
     analytical_grad = layer.grad_W.copy()
