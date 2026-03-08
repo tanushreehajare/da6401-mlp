@@ -28,24 +28,22 @@ def parse_arguments():
 
     parser = argparse.ArgumentParser(description='Run inference on test set')
 
-    parser.add_argument("--model_path", type=str, required=True)
-    parser.add_argument("--dataset", type=str, required=True,
-                        choices=["mnist", "fashion_mnist"])
-    parser.add_argument("--batch_size", type=int, required=True)
+    parser.add_argument("--model_path", type=str, default="src/best_model.npy")
 
-    parser.add_argument("--num_layers", type=int, required=True)
-    parser.add_argument("--hidden_size", nargs="+", type=int, required=True)
+    parser.add_argument("--dataset", type=str, default="mnist",
+                    choices=["mnist", "fashion_mnist"])
 
-    parser.add_argument("--activation", type=str, required=True,
-                        choices=["relu", "sigmoid", "tanh"])
+    parser.add_argument("--batch_size", type=int, default=64)
 
-    parser.add_argument("--loss", type=str, default="cross_entropy",
-                        choices=["cross_entropy", "mse"])
+    parser.add_argument("--num_layers", type=int, default=2)
 
-    parser.add_argument("--weight_init", type=str,
-                    default="xavier",
-                    choices=["xavier","random"])
+    parser.add_argument("--hidden_size", nargs="+", type=int, default=[128,128])
 
+    parser.add_argument("--activation", type=str, default="relu",
+                    choices=["relu", "sigmoid", "tanh"])
+
+    parser.add_argument("--loss", type=str, default="cross_entropy")
+    parser.add_argument("--weight_init", type=str, default="xavier")
     parser.add_argument("--learning_rate", type=float, default=0.001)
 
     args = parser.parse_args()
