@@ -12,7 +12,7 @@ parameters:
     values: ["mnist"]
 
   epochs:
-    value: 10
+    value: 5
 
   batch_size:
     value: 64

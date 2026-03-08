@@ -263,7 +263,10 @@ class NeuralNetwork:
 
             epoch_loss /= num_batches
 
-            train_accuracy = self.evaluate(X_train, y_train)
+            # Evaluate on a capped subset to keep sweep runs fast.
+            # Full evaluation is done after training in train.py.
+            eval_cap = 5000
+            train_accuracy = self.evaluate(X_train[:eval_cap], y_train[:eval_cap])
             test_accuracy  = self.evaluate(X_test,  y_test)
 
             # ---- Single wandb.log per epoch (fast) ----
