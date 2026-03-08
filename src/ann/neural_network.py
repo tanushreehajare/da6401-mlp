@@ -119,23 +119,24 @@ class NeuralNetwork:
             return grad_w, grad_b
         """
 
-        # derivative of loss wrt logits
+        # gradient of loss wrt logits
         dZ = self.loss_fn.derivative(y_true, y_pred)
 
         grad_W_list = []
         grad_b_list = []
 
-        # output layer
+        # ---- OUTPUT LAYER ----
         dA = self.layers[-1].backward(dZ)
+
         grad_W_list.append(self.layers[-1].grad_W)
         grad_b_list.append(self.layers[-1].grad_b)
 
-        # hidden layers
+        # ---- HIDDEN LAYERS ----
         for i in reversed(range(len(self.layers)-1)):
 
             Z = self.Z_cache[i]
 
-            # apply activation derivative
+            # activation derivative
             dZ = dA * self.activation.derivative(Z)
 
             dA = self.layers[i].backward(dZ)
@@ -143,7 +144,7 @@ class NeuralNetwork:
             grad_W_list.append(self.layers[i].grad_W)
             grad_b_list.append(self.layers[i].grad_b)
 
-        # convert to object arrays (autograder requirement)
+        # store gradients as object arrays
         self.grad_W = np.empty(len(grad_W_list), dtype=object)
         self.grad_b = np.empty(len(grad_b_list), dtype=object)
 

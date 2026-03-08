@@ -27,4 +27,5 @@ class CrossEntropy:
 
     @staticmethod
     def derivative(y_true, y_pred):
-        return (y_pred - y_true) 
+        m = y_true.shape[0]
+        return (y_pred - y_true) / m
