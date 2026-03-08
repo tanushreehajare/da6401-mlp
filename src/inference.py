@@ -34,7 +34,7 @@ def parse_arguments():
                         choices=["mnist", "fashion_mnist"])
 
     # Best-model architecture defaults (update after training)
-    parser.add_argument("-e",   "--epochs",        type=int,   default=10)
+    parser.add_argument("-e",   "--epochs",        type=int,   default=5)
     parser.add_argument("-b",   "--batch_size",    type=int,   default=64)
     parser.add_argument("-lr",  "--learning_rate", type=float, default=0.001)
     parser.add_argument("-o",   "--optimizer",     type=str,   default="rmsprop",
