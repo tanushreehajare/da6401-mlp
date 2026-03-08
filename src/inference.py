@@ -106,7 +106,7 @@ def evaluate_model(model, X_test, y_test, y_test_onehot):
     TODO: Return Dictionary - logits, loss, accuracy, f1, precision, recall
     """
 
-    logits,_ = model.forward(X_test)
+    logits = model.forward(X_test)
     probs = Softmax.forward(logits)
     y_pred = np.argmax(probs, axis=1)
 

@@ -105,7 +105,7 @@ class NeuralNetwork:
         Z_out = self.layers[-1].forward(A)
         self.Z_cache.append(Z_out)
 
-        return Z_out, self.A_cache
+        return Z_out
     
     def backward(self, y_true, y_pred):
         """
@@ -163,7 +163,7 @@ class NeuralNetwork:
                 X_batch = X_train[i:i+batch_size]
                 y_batch = y_train[i:i+batch_size]
 
-                logits,_ = self.forward(X_batch)
+                logits = self.forward(X_batch)
                 y_pred = Softmax.forward(logits)
 
                 # Q2.5 Activation histogram
@@ -207,7 +207,7 @@ class NeuralNetwork:
         Evaluate the network on given data.
         """
 
-        logits,_ = self.forward(X)
+        logits = self.forward(X)
         probs = Softmax.forward(logits)
         predictions = np.argmax(probs, axis=1)
         true_labels = np.argmax(y, axis=1)
@@ -221,7 +221,7 @@ def gradient_check(model, X, y, epsilon=1e-6):
     Numerical gradient checking for first layer weights.
     """
     # Forward
-    logits,_ = model.forward(X)
+    logits = model.forward(X)
     y_pred = Softmax.forward(logits)
     model.backward(y, y_pred)
 
@@ -237,12 +237,12 @@ def gradient_check(model, X, y, epsilon=1e-6):
 
             # f(w + eps)
             layer.W[i, j] = original_value + epsilon
-            plus_logits,_ = model.forward(X)
+            plus_logits = model.forward(X)
             plus_loss = model.loss_fn.forward(y, Softmax.forward(plus_logits))
 
             # f(w - eps)
             layer.W[i, j] = original_value - epsilon
-            minus_logits,_ = model.forward(X)
+            minus_logits = model.forward(X)
             minus_loss = model.loss_fn.forward(y, Softmax.forward(minus_logits))
 
             numerical_grad[i, j] = (plus_loss - minus_loss) / (2 * epsilon)

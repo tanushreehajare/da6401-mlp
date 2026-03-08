@@ -156,7 +156,7 @@ def main_with_args(args):
 
     from sklearn.metrics import f1_score
 
-    logits,_ = model.forward(X_test)
+    logits = model.forward(X_test)
     probs = Softmax.forward(logits)
     y_pred = np.argmax(probs, axis=1)
     y_true = np.argmax(y_test, axis=1)
@@ -206,7 +206,7 @@ def main():
     # Evaluate
     from sklearn.metrics import f1_score
 
-    logits,_ = model.forward(X_test)
+    logits = model.forward(X_test)
     probs = Softmax.forward(logits)
     y_pred = np.argmax(probs, axis=1)
     y_true = np.argmax(y_test, axis=1)
