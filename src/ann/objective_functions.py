@@ -44,4 +44,4 @@ class CrossEntropy:
     def derivative(y_true, logits):
         probs = _as_probabilities(logits)
         m = y_true.shape[0]
-        return (probs - y_true) / m
+        return (probs - y_true)
