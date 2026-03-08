@@ -224,18 +224,16 @@ class NeuralNetwork:
             epoch_loss = 0.0
             num_batches = 0
 
+            # Track last-batch grad info for epoch-level logging
+            last_grad_norm = 0.0
+            last_grad_neurons = [0.0] * 5
+
             for i in range(0, n, batch_size):
                 X_batch = X_train[i: i + batch_size]
                 y_batch = y_train[i: i + batch_size]
 
                 # Forward
-                logits = self.forward(X_batch)   # returns logits; self.probs updated
-
-                # ---- Q2.5: Activation histograms (first few steps of epoch 0) ----
-                if epoch == 0 and i < 50 and len(self.A_cache) > 1:
-                    wandb.log({
-                        "activation_hist_layer1": wandb.Histogram(self.A_cache[1])
-                    })
+                logits = self.forward(X_batch)
 
                 # Loss
                 loss = self.loss_fn.forward(y_batch, logits)
@@ -245,17 +243,14 @@ class NeuralNetwork:
                 # Backward
                 self.backward(y_batch, logits)
 
-                # ---- Gradient logging ----
-                grad_norm = np.linalg.norm(self.layers[0].grad_W)
-                wandb.log({"grad_norm_layer1": grad_norm})
-
+                # Cache gradient info from last batch (logged once per epoch below)
+                last_grad_norm = float(np.linalg.norm(self.layers[0].grad_W))
                 for neuron_idx in range(min(5, self.layers[0].grad_W.shape[1])):
-                    wandb.log({
-                        f"grad_neuron_{neuron_idx}":
-                            np.linalg.norm(self.layers[0].grad_W[:, neuron_idx])
-                    })
+                    last_grad_neurons[neuron_idx] = float(
+                        np.linalg.norm(self.layers[0].grad_W[:, neuron_idx])
+                    )
 
-                # Weight update (calls optimizer if attached, else plain SGD)
+                # Weight update
                 self.update_weights()
 
             epoch_loss /= num_batches
@@ -263,12 +258,23 @@ class NeuralNetwork:
             train_accuracy = self.evaluate(X_train, y_train)
             test_accuracy  = self.evaluate(X_test,  y_test)
 
-            wandb.log({
+            # ---- Single wandb.log per epoch (fast) ----
+            log_dict = {
                 "epoch":          epoch + 1,
                 "train_loss":     epoch_loss,
                 "train_accuracy": train_accuracy,
                 "test_accuracy":  test_accuracy,
-            })
+                "grad_norm_layer1": last_grad_norm,
+            }
+            # Activation histogram from last batch of this epoch
+            try:
+                if len(self.A_cache) > 1:
+                    log_dict["activation_hist_layer1"] = wandb.Histogram(self.A_cache[1])
+                for neuron_idx, val in enumerate(last_grad_neurons):
+                    log_dict[f"grad_neuron_{neuron_idx}"] = val
+                wandb.log(log_dict)
+            except Exception:
+                pass  # wandb not available (e.g. autograder environment)
 
     # ------------------------------------------------------------------
     # Evaluation
