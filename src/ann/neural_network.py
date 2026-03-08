@@ -122,7 +122,8 @@ class NeuralNetwork:
         grad_W_list = []
         grad_b_list = []
 
-        dZ = self.loss_fn.derivative(y_true, y_pred)
+        m = y_true.shape[0]
+        dZ = (y_pred - y_true) / m
 
         # Output layer
         dA = self.layers[-1].backward(dZ)
