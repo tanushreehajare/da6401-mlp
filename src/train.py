@@ -158,19 +158,16 @@ def main_with_args(args):
 def main():
     args = parse_arguments()
 
-    # Use offline/disabled mode if no W&B API key is present (e.g. autograder env)
-    # to prevent hanging on network calls.
-    import os as _os
-    wandb_mode = "online" if _os.environ.get("WANDB_API_KEY") else "disabled"
+    # Init W&B — try online first (works when called by wandb agent or with API key),
+    # fall back to disabled so the autograder never hangs.
     try:
         wandb.init(
             project=args.wandb_project,
             config=vars(args),
-            mode=wandb_mode,
-            settings=wandb.Settings(init_timeout=30),
+            settings=wandb.Settings(init_timeout=20),
         )
     except Exception:
-        wandb.init(mode="disabled")
+        wandb.init(mode="disabled", project=args.wandb_project, config=vars(args))
 
     # ------- Load data -------
     X_train, X_test, y_train, y_test = load_data(args.dataset)
@@ -224,7 +221,6 @@ def main():
         print(f"Model F1 ({test_f1:.4f}) did not beat current best ({best_score:.4f}).")
 
     # Print run URL then call finish() so W&B marks the run as complete
-    # (without this the dashboard shows runs as 'Running' even after they end)
     run = wandb.run
     if run is not None:
         print(f"W&B run: {run.url}")
