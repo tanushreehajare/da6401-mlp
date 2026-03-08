@@ -31,4 +31,4 @@ class CrossEntropy:
     def derivative(y_true, logits):
         probs = Softmax.forward(logits)
         m = y_true.shape[0]
-        return (probs - y_true) 
+        return (probs - y_true) / m
