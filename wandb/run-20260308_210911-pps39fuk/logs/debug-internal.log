@@ -1,0 +1,12 @@
+{"time":"2026-03-08T21:09:13.5229419+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-08T21:09:13.9330097+05:30","level":"INFO","msg":"stream: created new stream","id":"pps39fuk"}
+{"time":"2026-03-08T21:09:13.9337805+05:30","level":"INFO","msg":"handler: started","stream_id":"pps39fuk"}
+{"time":"2026-03-08T21:09:13.9381608+05:30","level":"INFO","msg":"stream: started","id":"pps39fuk"}
+{"time":"2026-03-08T21:09:13.9381608+05:30","level":"INFO","msg":"writer: started","stream_id":"pps39fuk"}
+{"time":"2026-03-08T21:09:13.9381608+05:30","level":"INFO","msg":"sender: started","stream_id":"pps39fuk"}
+{"time":"2026-03-08T21:09:46.2542148+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-08T21:09:46.6409015+05:30","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-03-08T21:09:46.6640691+05:30","level":"INFO","msg":"stream: closing","id":"pps39fuk"}
+{"time":"2026-03-08T21:09:46.6640691+05:30","level":"INFO","msg":"handler: closed","stream_id":"pps39fuk"}
+{"time":"2026-03-08T21:09:46.6652463+05:30","level":"INFO","msg":"sender: closed","stream_id":"pps39fuk"}
+{"time":"2026-03-08T21:09:46.6652463+05:30","level":"INFO","msg":"stream: closed","id":"pps39fuk"}

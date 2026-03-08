@@ -1,0 +1,64 @@
+{
+  "os":  "Windows-11-10.0.26200-SP0",
+  "python":  "CPython 3.14.3",
+  "startedAt":  "2026-03-08T17:48:09.612315Z",
+  "args":  [
+    "-d",
+    "mnist",
+    "-e",
+    "1",
+    "-b",
+    "64",
+    "-lr",
+    "0.001",
+    "-o",
+    "sgd",
+    "-nhl",
+    "3",
+    "-sz",
+    "128",
+    "-a",
+    "relu",
+    "-l",
+    "cross_entropy",
+    "-wi",
+    "zeros",
+    "-wd",
+    "0.0",
+    "-wp",
+    "sweeps-mlp-last"
+  ],
+  "program":  "C:\\Users\\bsvp\\Documents\\da6401_assignment_1-main - Copy\\src\\train.py",
+  "codePath":  "src\\train.py",
+  "codePathLocal":  "src\\train.py",
+  "git":  {
+    "remote":  "https://github.com/tanushreehajare/da6401-mlp.git",
+    "commit":  "91a212de4898f95b1f68fe93bc360df30b2c2698"
+  },
+  "email":  "id25s004@smail.iitm.ac.in",
+  "root":  "C:\\Users\\bsvp\\Documents\\da6401_assignment_1-main - Copy",
+  "host":  "DESKTOP",
+  "executable":  "C:\\Users\\bsvp\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+  "cpu_count":  8,
+  "cpu_count_logical":  16,
+  "gpu":  "GeForce GT 710",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "911430643712",
+      "used":  "400751763456"
+    }
+  },
+  "memory":  {
+    "total":  "34113650688"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "GeForce GT 710",
+      "architecture":  "Kepler",
+      "uuid":  "GPU-51a63ef1-f31f-4edd-991a-991b42ca403e"
+    }
+  ],
+  "cudaVersion":  "11.1",
+  "writerId":  "ur028xgbsdc46115z60nqian3k4c5aju"
+}

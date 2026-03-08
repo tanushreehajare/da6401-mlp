@@ -12,4 +12,4 @@ https://github.com/tanushreehajare/da6401-mlp
 ## Weights & Biases Report
 
 W&B Report:
-https://api.wandb.ai/links/id25s004-indian/a3xzc8oo
+https://wandb.ai/id25s004-indian/sweeps-mlp-last/reports/DA6401-Assignment-1-ID25S004--VmlldzoxNjE0MjA3NQ?accessToken=cfa10263dj0r1ym2j7o4epfyr5pr6ujvv8eazw08dwglei6e8amakh1ep3a72z5p

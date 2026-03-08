@@ -1,0 +1,29 @@
+Traceback (most recent call last):
+  File "C:\Users\bsvp\Documents\da6401_assignment_1-main - Copy\src\train.py", line 231, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\bsvp\Documents\da6401_assignment_1-main - Copy\src\train.py", line 173, in main
+    X_train, X_test, y_train, y_test = load_data(args.dataset)
+                                       ~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\bsvp\Documents\da6401_assignment_1-main - Copy\src\train.py", line 75, in load_data
+    X_train, X_test, y_train, y_test = train_test_split(
+                                       ~~~~~~~~~~~~~~~~^
+        X, y, test_size=10_000, random_state=42
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\bsvp\AppData\Local\Programs\Python\Python314\Lib\site-packages\sklearn\utils\_param_validation.py", line 218, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\bsvp\AppData\Local\Programs\Python\Python314\Lib\site-packages\sklearn\model_selection\_split.py", line 2950, in train_test_split
+    return list(
+        chain.from_iterable(
+            (_safe_indexing(a, train), _safe_indexing(a, test)) for a in arrays
+        )
+    )
+  File "C:\Users\bsvp\AppData\Local\Programs\Python\Python314\Lib\site-packages\sklearn\model_selection\_split.py", line 2952, in <genexpr>
+    (_safe_indexing(a, train), _safe_indexing(a, test)) for a in arrays
+                               ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\bsvp\AppData\Local\Programs\Python\Python314\Lib\site-packages\sklearn\utils\_indexing.py", line 265, in _safe_indexing
+    def _safe_indexing(X, indices, *, axis=0):
+
+KeyboardInterrupt

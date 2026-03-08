@@ -1,0 +1,12 @@
+{"time":"2026-03-08T21:04:24.5641855+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-08T21:04:24.9826178+05:30","level":"INFO","msg":"stream: created new stream","id":"ze4ckdv2"}
+{"time":"2026-03-08T21:04:24.9826178+05:30","level":"INFO","msg":"handler: started","stream_id":"ze4ckdv2"}
+{"time":"2026-03-08T21:04:24.9837851+05:30","level":"INFO","msg":"stream: started","id":"ze4ckdv2"}
+{"time":"2026-03-08T21:04:24.9837851+05:30","level":"INFO","msg":"sender: started","stream_id":"ze4ckdv2"}
+{"time":"2026-03-08T21:04:24.9837851+05:30","level":"INFO","msg":"writer: started","stream_id":"ze4ckdv2"}
+{"time":"2026-03-08T21:04:47.838817+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-08T21:04:48.3018581+05:30","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-03-08T21:04:48.323566+05:30","level":"INFO","msg":"stream: closing","id":"ze4ckdv2"}
+{"time":"2026-03-08T21:04:48.323566+05:30","level":"INFO","msg":"handler: closed","stream_id":"ze4ckdv2"}
+{"time":"2026-03-08T21:04:48.3277015+05:30","level":"INFO","msg":"sender: closed","stream_id":"ze4ckdv2"}
+{"time":"2026-03-08T21:04:48.3277015+05:30","level":"INFO","msg":"stream: closed","id":"ze4ckdv2"}

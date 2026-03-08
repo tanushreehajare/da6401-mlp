@@ -1,0 +1,12 @@
+{"time":"2026-03-08T21:16:04.668434+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-08T21:16:05.086504+05:30","level":"INFO","msg":"stream: created new stream","id":"5uxltpkg"}
+{"time":"2026-03-08T21:16:05.0871924+05:30","level":"INFO","msg":"handler: started","stream_id":"5uxltpkg"}
+{"time":"2026-03-08T21:16:05.0915779+05:30","level":"INFO","msg":"stream: started","id":"5uxltpkg"}
+{"time":"2026-03-08T21:16:05.0915779+05:30","level":"INFO","msg":"writer: started","stream_id":"5uxltpkg"}
+{"time":"2026-03-08T21:16:05.0915779+05:30","level":"INFO","msg":"sender: started","stream_id":"5uxltpkg"}
+{"time":"2026-03-08T21:16:36.0919208+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-08T21:16:36.4496311+05:30","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-03-08T21:16:36.4585977+05:30","level":"INFO","msg":"stream: closing","id":"5uxltpkg"}
+{"time":"2026-03-08T21:16:36.4585977+05:30","level":"INFO","msg":"handler: closed","stream_id":"5uxltpkg"}
+{"time":"2026-03-08T21:16:36.4627163+05:30","level":"INFO","msg":"sender: closed","stream_id":"5uxltpkg"}
+{"time":"2026-03-08T21:16:36.4627163+05:30","level":"INFO","msg":"stream: closed","id":"5uxltpkg"}

@@ -1,0 +1,89 @@
+_wandb:
+    value:
+        cli_version: 0.25.0
+        e:
+            obdexo1r6ag0cdv4atmzc61dx1wvbfpz:
+                args:
+                    - --activation=relu
+                    - --batch_size=64
+                    - --dataset=mnist
+                    - --epochs=5
+                    - --hidden_size=128
+                    - --learning_rate=0.0015
+                    - --loss=mse
+                    - --num_layers=3
+                    - --optimizer=momentum
+                    - --weight_decay=0
+                    - --weight_init=xavier
+                codePath: src\train.py
+                codePathLocal: src\train.py
+                cpu_count: 8
+                cpu_count_logical: 16
+                cudaVersion: "11.1"
+                disk:
+                    /:
+                        total: "911430643712"
+                        used: "400946016256"
+                email: id25s004@smail.iitm.ac.in
+                executable: C:\Users\bsvp\AppData\Local\Programs\Python\Python314\python.exe
+                git:
+                    commit: 91a212de4898f95b1f68fe93bc360df30b2c2698
+                    remote: https://github.com/tanushreehajare/da6401-mlp.git
+                gpu: GeForce GT 710
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Kepler
+                      name: GeForce GT 710
+                      uuid: GPU-51a63ef1-f31f-4edd-991a-991b42ca403e
+                host: DESKTOP
+                memory:
+                    total: "34113650688"
+                os: Windows-11-10.0.26200-SP0
+                program: C:\Users\bsvp\Documents\da6401_assignment_1-main - Copy\src\train.py
+                python: CPython 3.14.3
+                root: C:\Users\bsvp\Documents\da6401_assignment_1-main - Copy
+                startedAt: "2026-03-08T15:47:43.901546Z"
+                writerId: obdexo1r6ag0cdv4atmzc61dx1wvbfpz
+        m: []
+        python_version: 3.14.3
+        t:
+            "1":
+                - 5
+                - 53
+            "2":
+                - 5
+                - 53
+            "3":
+                - 2
+                - 14
+                - 16
+            "4": 3.14.3
+            "5": 0.25.0
+            "8":
+                - 3
+            "12": 0.25.0
+            "13": windows-amd64
+activation:
+    value: relu
+batch_size:
+    value: 64
+dataset:
+    value: mnist
+epochs:
+    value: 5
+hidden_size:
+    value: 128
+learning_rate:
+    value: 0.0015
+loss:
+    value: mse
+num_layers:
+    value: 3
+optimizer:
+    value: momentum
+wandb_project:
+    value: sweeps-mlp-last
+weight_decay:
+    value: 0
+weight_init:
+    value: xavier

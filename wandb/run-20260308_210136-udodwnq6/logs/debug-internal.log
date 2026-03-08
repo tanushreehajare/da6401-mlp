@@ -1,0 +1,12 @@
+{"time":"2026-03-08T21:01:38.9716171+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-08T21:01:39.3865885+05:30","level":"INFO","msg":"stream: created new stream","id":"udodwnq6"}
+{"time":"2026-03-08T21:01:39.3873635+05:30","level":"INFO","msg":"handler: started","stream_id":"udodwnq6"}
+{"time":"2026-03-08T21:01:39.3914234+05:30","level":"INFO","msg":"stream: started","id":"udodwnq6"}
+{"time":"2026-03-08T21:01:39.3914234+05:30","level":"INFO","msg":"writer: started","stream_id":"udodwnq6"}
+{"time":"2026-03-08T21:01:39.3914234+05:30","level":"INFO","msg":"sender: started","stream_id":"udodwnq6"}
+{"time":"2026-03-08T21:02:12.5815104+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-08T21:02:12.9577589+05:30","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-03-08T21:02:12.9801066+05:30","level":"INFO","msg":"stream: closing","id":"udodwnq6"}
+{"time":"2026-03-08T21:02:12.9801066+05:30","level":"INFO","msg":"handler: closed","stream_id":"udodwnq6"}
+{"time":"2026-03-08T21:02:12.9856001+05:30","level":"INFO","msg":"sender: closed","stream_id":"udodwnq6"}
+{"time":"2026-03-08T21:02:12.9856001+05:30","level":"INFO","msg":"stream: closed","id":"udodwnq6"}

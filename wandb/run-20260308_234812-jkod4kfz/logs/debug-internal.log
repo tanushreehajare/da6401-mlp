@@ -1,0 +1,12 @@
+{"time":"2026-03-08T23:48:14.7876668+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-08T23:48:15.260282+05:30","level":"INFO","msg":"stream: created new stream","id":"jkod4kfz"}
+{"time":"2026-03-08T23:48:15.2607944+05:30","level":"INFO","msg":"handler: started","stream_id":"jkod4kfz"}
+{"time":"2026-03-08T23:48:15.2614479+05:30","level":"INFO","msg":"stream: started","id":"jkod4kfz"}
+{"time":"2026-03-08T23:48:15.2614479+05:30","level":"INFO","msg":"writer: started","stream_id":"jkod4kfz"}
+{"time":"2026-03-08T23:48:15.2614479+05:30","level":"INFO","msg":"sender: started","stream_id":"jkod4kfz"}
+{"time":"2026-03-08T23:48:48.4761566+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-08T23:48:48.9845744+05:30","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-03-08T23:48:48.9887514+05:30","level":"INFO","msg":"stream: closing","id":"jkod4kfz"}
+{"time":"2026-03-08T23:48:48.9887514+05:30","level":"INFO","msg":"handler: closed","stream_id":"jkod4kfz"}
+{"time":"2026-03-08T23:48:48.9898589+05:30","level":"INFO","msg":"sender: closed","stream_id":"jkod4kfz"}
+{"time":"2026-03-08T23:48:48.9898589+05:30","level":"INFO","msg":"stream: closed","id":"jkod4kfz"}

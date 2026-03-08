@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "C:\Users\bsvp\Documents\da6401_assignment_1-main - Copy\src\inference.py", line 166, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\bsvp\Documents\da6401_assignment_1-main - Copy\src\inference.py", line 153, in main
+    results = evaluate_model(model, X_test, y_test, y_test_onehot)
+  File "C:\Users\bsvp\Documents\da6401_assignment_1-main - Copy\src\inference.py", line 106, in evaluate_model
+    loss      = model.loss_fn.forward(y_test_onehot, logits)
+  File "C:\Users\bsvp\Documents\da6401_assignment_1-main - Copy\src\ann\objective_functions.py", line 89, in forward
+    loss = -np.sum(y_true * np.log(probs)) / m
+                   ~~~~~~~^~~~~~~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (100000,128) (10000,128)

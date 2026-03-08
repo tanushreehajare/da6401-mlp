@@ -1,0 +1,12 @@
+{"time":"2026-03-08T20:20:01.9286708+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-08T20:20:02.3303827+05:30","level":"INFO","msg":"stream: created new stream","id":"zy2wilss"}
+{"time":"2026-03-08T20:20:02.3303827+05:30","level":"INFO","msg":"handler: started","stream_id":"zy2wilss"}
+{"time":"2026-03-08T20:20:02.3349426+05:30","level":"INFO","msg":"stream: started","id":"zy2wilss"}
+{"time":"2026-03-08T20:20:02.3349426+05:30","level":"INFO","msg":"writer: started","stream_id":"zy2wilss"}
+{"time":"2026-03-08T20:20:02.3349426+05:30","level":"INFO","msg":"sender: started","stream_id":"zy2wilss"}
+{"time":"2026-03-08T20:20:37.4376205+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-08T20:20:37.7982546+05:30","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-03-08T20:20:37.8109017+05:30","level":"INFO","msg":"stream: closing","id":"zy2wilss"}
+{"time":"2026-03-08T20:20:37.8109017+05:30","level":"INFO","msg":"handler: closed","stream_id":"zy2wilss"}
+{"time":"2026-03-08T20:20:37.8145999+05:30","level":"INFO","msg":"sender: closed","stream_id":"zy2wilss"}
+{"time":"2026-03-08T20:20:37.8151257+05:30","level":"INFO","msg":"stream: closed","id":"zy2wilss"}

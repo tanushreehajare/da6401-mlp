@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "C:\Users\bsvp\Documents\da6401_assignment_1-main - Copy\src\train.py", line 231, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\bsvp\Documents\da6401_assignment_1-main - Copy\src\train.py", line 191, in main
+    model.train(X_train, y_train, X_test, y_test,
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                epochs=args.epochs, batch_size=args.batch_size)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bsvp\Documents\da6401_assignment_1-main - Copy\src\ann\neural_network.py", line 252, in train
+    self.backward(y_batch, logits)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\bsvp\Documents\da6401_assignment_1-main - Copy\src\ann\neural_network.py", line 186, in backward
+    dZ = dA * self.activation.derivative(Z)
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\bsvp\Documents\da6401_assignment_1-main - Copy\src\ann\activations.py", line 38, in derivative
+    return (x > 0).astype(float)
+           ~~~~~~~~~~~~~~^^^^^^^
+KeyboardInterrupt

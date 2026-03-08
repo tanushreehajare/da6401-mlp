@@ -1,0 +1,12 @@
+{"time":"2026-03-08T21:07:32.1744859+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-08T21:07:32.5854928+05:30","level":"INFO","msg":"stream: created new stream","id":"ssl25sr0"}
+{"time":"2026-03-08T21:07:32.5860418+05:30","level":"INFO","msg":"handler: started","stream_id":"ssl25sr0"}
+{"time":"2026-03-08T21:07:32.5903195+05:30","level":"INFO","msg":"stream: started","id":"ssl25sr0"}
+{"time":"2026-03-08T21:07:32.5903195+05:30","level":"INFO","msg":"writer: started","stream_id":"ssl25sr0"}
+{"time":"2026-03-08T21:07:32.5903195+05:30","level":"INFO","msg":"sender: started","stream_id":"ssl25sr0"}
+{"time":"2026-03-08T21:08:33.4910549+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-08T21:08:33.9595962+05:30","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-03-08T21:08:33.981529+05:30","level":"INFO","msg":"stream: closing","id":"ssl25sr0"}
+{"time":"2026-03-08T21:08:33.981529+05:30","level":"INFO","msg":"handler: closed","stream_id":"ssl25sr0"}
+{"time":"2026-03-08T21:08:33.9834661+05:30","level":"INFO","msg":"sender: closed","stream_id":"ssl25sr0"}
+{"time":"2026-03-08T21:08:33.9834661+05:30","level":"INFO","msg":"stream: closed","id":"ssl25sr0"}

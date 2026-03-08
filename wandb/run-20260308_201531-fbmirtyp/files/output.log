@@ -1,0 +1,4 @@
+Test Accuracy : 0.4051
+Test F1 Score : 0.3437
+Model F1 (0.3437) did not beat current best (0.9682).
+W&B run: https://wandb.ai/id25s004-indian/sweeps-mlp-last/runs/fbmirtyp

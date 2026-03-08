@@ -1,0 +1,12 @@
+{"time":"2026-03-08T20:31:47.6631778+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-08T20:31:48.058897+05:30","level":"INFO","msg":"stream: created new stream","id":"lfx4hd8k"}
+{"time":"2026-03-08T20:31:48.0594848+05:30","level":"INFO","msg":"handler: started","stream_id":"lfx4hd8k"}
+{"time":"2026-03-08T20:31:48.0621363+05:30","level":"INFO","msg":"stream: started","id":"lfx4hd8k"}
+{"time":"2026-03-08T20:31:48.0621363+05:30","level":"INFO","msg":"writer: started","stream_id":"lfx4hd8k"}
+{"time":"2026-03-08T20:31:48.0621363+05:30","level":"INFO","msg":"sender: started","stream_id":"lfx4hd8k"}
+{"time":"2026-03-08T20:32:24.9424134+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-08T20:32:25.2980797+05:30","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-03-08T20:32:25.3169779+05:30","level":"INFO","msg":"stream: closing","id":"lfx4hd8k"}
+{"time":"2026-03-08T20:32:25.3169779+05:30","level":"INFO","msg":"handler: closed","stream_id":"lfx4hd8k"}
+{"time":"2026-03-08T20:32:25.3221776+05:30","level":"INFO","msg":"sender: closed","stream_id":"lfx4hd8k"}
+{"time":"2026-03-08T20:32:25.3221776+05:30","level":"INFO","msg":"stream: closed","id":"lfx4hd8k"}

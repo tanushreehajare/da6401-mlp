@@ -1,0 +1,12 @@
+{"time":"2026-03-08T21:21:52.5502484+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-08T21:21:52.9605576+05:30","level":"INFO","msg":"stream: created new stream","id":"ukhopm4d"}
+{"time":"2026-03-08T21:21:52.9605576+05:30","level":"INFO","msg":"handler: started","stream_id":"ukhopm4d"}
+{"time":"2026-03-08T21:21:52.9651813+05:30","level":"INFO","msg":"stream: started","id":"ukhopm4d"}
+{"time":"2026-03-08T21:21:52.9651813+05:30","level":"INFO","msg":"writer: started","stream_id":"ukhopm4d"}
+{"time":"2026-03-08T21:21:52.9651813+05:30","level":"INFO","msg":"sender: started","stream_id":"ukhopm4d"}
+{"time":"2026-03-08T21:22:22.0967334+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-08T21:22:22.4900197+05:30","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-03-08T21:22:22.5128883+05:30","level":"INFO","msg":"stream: closing","id":"ukhopm4d"}
+{"time":"2026-03-08T21:22:22.5128883+05:30","level":"INFO","msg":"handler: closed","stream_id":"ukhopm4d"}
+{"time":"2026-03-08T21:22:22.5183496+05:30","level":"INFO","msg":"sender: closed","stream_id":"ukhopm4d"}
+{"time":"2026-03-08T21:22:22.5183496+05:30","level":"INFO","msg":"stream: closed","id":"ukhopm4d"}

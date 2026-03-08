@@ -1,0 +1,12 @@
+{"time":"2026-03-08T20:20:44.7579956+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-08T20:20:45.1580075+05:30","level":"INFO","msg":"stream: created new stream","id":"xushp9pl"}
+{"time":"2026-03-08T20:20:45.1580075+05:30","level":"INFO","msg":"handler: started","stream_id":"xushp9pl"}
+{"time":"2026-03-08T20:20:45.1598031+05:30","level":"INFO","msg":"stream: started","id":"xushp9pl"}
+{"time":"2026-03-08T20:20:45.1598031+05:30","level":"INFO","msg":"writer: started","stream_id":"xushp9pl"}
+{"time":"2026-03-08T20:20:45.1598031+05:30","level":"INFO","msg":"sender: started","stream_id":"xushp9pl"}
+{"time":"2026-03-08T20:21:18.990438+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-08T20:21:19.3874235+05:30","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-03-08T20:21:19.3922587+05:30","level":"INFO","msg":"stream: closing","id":"xushp9pl"}
+{"time":"2026-03-08T20:21:19.3922587+05:30","level":"INFO","msg":"handler: closed","stream_id":"xushp9pl"}
+{"time":"2026-03-08T20:21:19.3922587+05:30","level":"INFO","msg":"sender: closed","stream_id":"xushp9pl"}
+{"time":"2026-03-08T20:21:19.3927646+05:30","level":"INFO","msg":"stream: closed","id":"xushp9pl"}

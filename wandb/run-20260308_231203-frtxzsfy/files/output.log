@@ -1,0 +1,8 @@
+Loaded config from src/best_config.json: {'wandb_project': 'sweeps-mlp-last', 'dataset': 'mnist', 'epochs': 5, 'batch_size': 64, 'learning_rate': 0.001, 'optimizer': 'rmsprop', 'hidden_size': [128, 128, 128], 'num_layers': 3, 'activation': 'relu', 'loss': 'cross_entropy', 'weight_init': 'xavier', 'weight_decay': 0.0}
+
+===== Evaluation Results =====
+Loss      : 0.0830
+Accuracy  : 0.9769
+Precision : 0.9768
+Recall    : 0.9767
+F1 Score  : 0.9768

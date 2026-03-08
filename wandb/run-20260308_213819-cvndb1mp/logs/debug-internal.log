@@ -1,0 +1,12 @@
+{"time":"2026-03-08T21:38:21.6095466+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-08T21:38:22.0018026+05:30","level":"INFO","msg":"stream: created new stream","id":"cvndb1mp"}
+{"time":"2026-03-08T21:38:22.0018026+05:30","level":"INFO","msg":"handler: started","stream_id":"cvndb1mp"}
+{"time":"2026-03-08T21:38:22.0033863+05:30","level":"INFO","msg":"stream: started","id":"cvndb1mp"}
+{"time":"2026-03-08T21:38:22.0033863+05:30","level":"INFO","msg":"sender: started","stream_id":"cvndb1mp"}
+{"time":"2026-03-08T21:38:22.0033863+05:30","level":"INFO","msg":"writer: started","stream_id":"cvndb1mp"}
+{"time":"2026-03-08T21:38:59.7253423+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-08T21:39:00.0912307+05:30","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-03-08T21:39:00.1032367+05:30","level":"INFO","msg":"stream: closing","id":"cvndb1mp"}
+{"time":"2026-03-08T21:39:00.1032367+05:30","level":"INFO","msg":"handler: closed","stream_id":"cvndb1mp"}
+{"time":"2026-03-08T21:39:00.1037447+05:30","level":"INFO","msg":"sender: closed","stream_id":"cvndb1mp"}
+{"time":"2026-03-08T21:39:00.1037447+05:30","level":"INFO","msg":"stream: closed","id":"cvndb1mp"}

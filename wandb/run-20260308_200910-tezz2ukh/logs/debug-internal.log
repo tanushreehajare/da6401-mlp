@@ -1,0 +1,12 @@
+{"time":"2026-03-08T20:09:12.9446212+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-08T20:09:13.3501545+05:30","level":"INFO","msg":"stream: created new stream","id":"tezz2ukh"}
+{"time":"2026-03-08T20:09:13.350786+05:30","level":"INFO","msg":"handler: started","stream_id":"tezz2ukh"}
+{"time":"2026-03-08T20:09:13.3539774+05:30","level":"INFO","msg":"stream: started","id":"tezz2ukh"}
+{"time":"2026-03-08T20:09:13.3539774+05:30","level":"INFO","msg":"writer: started","stream_id":"tezz2ukh"}
+{"time":"2026-03-08T20:09:13.3539774+05:30","level":"INFO","msg":"sender: started","stream_id":"tezz2ukh"}
+{"time":"2026-03-08T20:10:06.4670159+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-08T20:10:06.8652458+05:30","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-03-08T20:10:06.8781356+05:30","level":"INFO","msg":"stream: closing","id":"tezz2ukh"}
+{"time":"2026-03-08T20:10:06.8781356+05:30","level":"INFO","msg":"handler: closed","stream_id":"tezz2ukh"}
+{"time":"2026-03-08T20:10:06.8821568+05:30","level":"INFO","msg":"sender: closed","stream_id":"tezz2ukh"}
+{"time":"2026-03-08T20:10:06.8821568+05:30","level":"INFO","msg":"stream: closed","id":"tezz2ukh"}

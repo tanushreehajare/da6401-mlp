@@ -1,0 +1,11 @@
+{"time":"2026-03-08T23:10:11.5636493+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-08T23:10:11.9653969+05:30","level":"INFO","msg":"stream: created new stream","id":"nihdvbiu"}
+{"time":"2026-03-08T23:10:11.9653969+05:30","level":"INFO","msg":"handler: started","stream_id":"nihdvbiu"}
+{"time":"2026-03-08T23:10:11.9701721+05:30","level":"INFO","msg":"stream: started","id":"nihdvbiu"}
+{"time":"2026-03-08T23:10:11.9701721+05:30","level":"INFO","msg":"writer: started","stream_id":"nihdvbiu"}
+{"time":"2026-03-08T23:10:11.9701721+05:30","level":"INFO","msg":"sender: started","stream_id":"nihdvbiu"}
+{"time":"2026-03-08T23:10:26.1551923+05:30","level":"INFO","msg":"stream: closing","id":"nihdvbiu"}
+{"time":"2026-03-08T23:10:27.7428923+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-08T23:10:28.1431692+05:30","level":"INFO","msg":"handler: closed","stream_id":"nihdvbiu"}
+{"time":"2026-03-08T23:10:28.1476222+05:30","level":"INFO","msg":"sender: closed","stream_id":"nihdvbiu"}
+{"time":"2026-03-08T23:10:28.1476222+05:30","level":"INFO","msg":"stream: closed","id":"nihdvbiu"}

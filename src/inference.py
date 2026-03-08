@@ -34,7 +34,7 @@ def parse_arguments():
                         choices=["mnist", "fashion_mnist"])
 
     # Best-model architecture defaults (update after training)
-    parser.add_argument("-e",   "--epochs",        type=int,   default=5)
+    parser.add_argument("-e",   "--epochs",        type=int,   default=10)
     parser.add_argument("-b",   "--batch_size",    type=int,   default=64)
     parser.add_argument("-lr",  "--learning_rate", type=float, default=0.001)
     parser.add_argument("-o",   "--optimizer",     type=str,   default="rmsprop",
@@ -147,6 +147,26 @@ def evaluate_model(model, X_test, y_test, y_test_onehot):
 def main():
     args = parse_arguments()
     wandb.init(project=args.wandb_project)
+
+    # Always load architecture from best_config.json to avoid shape mismatches
+    import json, os
+    config_path = args.model_path.replace("best_model.npy", "best_config.json")
+    if os.path.exists(config_path):
+        with open(config_path, "r") as f:
+            config_dict = json.load(f)
+        # Resolve hidden_size to list matching num_layers
+        hs = config_dict.get("hidden_size", args.hidden_size)
+        nl = config_dict.get("num_layers", args.num_layers)
+        if isinstance(hs, int):
+            hs = [hs] * nl
+        elif isinstance(hs, list) and len(hs) == 1:
+            hs = hs * nl
+        config_dict["hidden_size"] = hs
+        config_dict["num_layers"] = nl
+        # Merge with args (config_dict takes priority for architecture)
+        for k, v in config_dict.items():
+            setattr(args, k, v)
+        print(f"Loaded config from {config_path}: {config_dict}")
 
     X_test, y_test, y_test_onehot = load_data(args.dataset)
     model   = load_model(args.model_path, args)
