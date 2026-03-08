@@ -136,19 +136,19 @@ class NeuralNetwork:
 
             Z = self.Z_cache[i]
 
-            # activation derivative
             dZ = dA * self.activation.derivative(Z)
 
             dA = self.layers[i].backward(dZ)
 
-            self.grad_W = grad_W_list
-            self.grad_b = grad_b_list
-        
+            grad_W_list.append(self.layers[i].grad_W)
+            grad_b_list.append(self.layers[i].grad_b)
+
+        # correct order (first layer → last layer)
         grad_W_list.reverse()
         grad_b_list.reverse()
 
-        self.grad_W = np.empty(len(grad_W_list), dtype=object)
-        self.grad_b = np.empty(len(grad_b_list), dtype=object)
+        self.grad_W = grad_W_list
+        self.grad_b = grad_b_list
 
         return self.grad_W, self.grad_b
     
