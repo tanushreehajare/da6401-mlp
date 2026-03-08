@@ -18,14 +18,17 @@ class MeanSquaredError:
 
 
 class CrossEntropy:
-    @staticmethod
-    def forward(y_true, y_pred):
-        m = y_true.shape[0]
-        epsilon = 1e-15
-        y_pred = np.clip(y_pred, epsilon, 1 - epsilon)
-        return -np.sum(y_true * np.log(y_pred)) / m
 
     @staticmethod
-    def derivative(y_true, y_pred):
+    def forward(y_true, logits):
+        probs = Softmax.forward(logits)
         m = y_true.shape[0]
-        return (y_pred - y_true) / m
+        epsilon = 1e-15
+        probs = np.clip(probs, epsilon, 1 - epsilon)
+        return -np.sum(y_true * np.log(probs)) / m
+
+    @staticmethod
+    def derivative(y_true, logits):
+        probs = Softmax.forward(logits)
+        m = y_true.shape[0]
+        return (probs - y_true) / m

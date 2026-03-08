@@ -120,7 +120,7 @@ class NeuralNetwork:
         """
 
         # gradient of loss wrt logits
-        dZ = self.loss_fn.derivative(y_true, Softmax.forward(y_pred))
+        dZ = self.loss_fn.derivative(y_true, y_pred)
 
         grad_W_list = []
         grad_b_list = []
@@ -190,7 +190,7 @@ class NeuralNetwork:
                         wandb.Histogram(self.A_cache[1])
                     })
 
-                loss = self.loss_fn.forward(y_batch, Softmax.forward(logits))
+                loss = self.loss_fn.forward(y_batch, logits)
                 epoch_loss += loss
 
                 self.backward(y_batch, logits)
