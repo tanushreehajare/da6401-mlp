@@ -118,12 +118,10 @@ class NeuralNetwork:
         Returns:
             return grad_w, grad_b
         """
-    
 
         grad_W_list = []
         grad_b_list = []
 
-        # Initial gradient from loss
         dZ = self.loss_fn.derivative(y_true, y_pred)
 
         # Output layer
