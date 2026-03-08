@@ -21,7 +21,11 @@ class NeuralNetwork:
             cli_args: Command-line arguments for configuring the network
         """
         self.num_layers = cli_args.num_layers
-        self.hidden_sizes = [cli_args.hidden_size] * cli_args.num_layers
+        if isinstance(cli_args.hidden_size, list):
+            assert len(cli_args.hidden_size) == cli_args.num_layers
+            self.hidden_sizes = cli_args.hidden_size
+        else:
+            self.hidden_sizes = [cli_args.hidden_size] * cli_args.num_layers
         self.activation_name = cli_args.activation
         self.loss_name = cli_args.loss
         self.learning_rate = cli_args.learning_rate
@@ -64,6 +68,18 @@ class NeuralNetwork:
         self.layers.append(
             LinearLayer(input_dim, output_dim, weight_init=self.weight_init)
         )
+
+    def get_weights(self):
+        weights = {}
+        for idx, layer in enumerate(self.layers):
+            weights[f"W{idx}"] = layer.W
+            weights[f"b{idx}"] = layer.b
+        return weights
+
+    def set_weights(self, weights):
+        for idx, layer in enumerate(self.layers):
+            layer.W = weights[f"W{idx}"]
+            layer.b = weights[f"b{idx}"]
     
     def forward(self, X):
         """
@@ -80,20 +96,16 @@ class NeuralNetwork:
         self.Z_cache = []
         self.A_cache = [X]
 
-        # Hidden layers
         for layer in self.layers[:-1]:
             Z = layer.forward(A)
             A = self.activation.forward(Z)
-
             self.Z_cache.append(Z)
             self.A_cache.append(A)
 
-        # Output layer
         Z_out = self.layers[-1].forward(A)
-
         self.Z_cache.append(Z_out)
 
-        return Z_out   # return logits
+        return Z_out, self.A_cache
     
     def backward(self, y_true, y_pred):
         """
@@ -151,7 +163,7 @@ class NeuralNetwork:
                 X_batch = X_train[i:i+batch_size]
                 y_batch = y_train[i:i+batch_size]
 
-                logits = self.forward(X_batch)
+                logits,_ = self.forward(X_batch)
                 y_pred = Softmax.forward(logits)
 
                 # Q2.5 Activation histogram
@@ -195,7 +207,7 @@ class NeuralNetwork:
         Evaluate the network on given data.
         """
 
-        logits = self.forward(X)
+        logits,_ = self.forward(X)
         probs = Softmax.forward(logits)
         predictions = np.argmax(probs, axis=1)
         true_labels = np.argmax(y, axis=1)
@@ -209,7 +221,7 @@ def gradient_check(model, X, y, epsilon=1e-6):
     Numerical gradient checking for first layer weights.
     """
     # Forward
-    logits = model.forward(X)
+    logits,_ = model.forward(X)
     y_pred = Softmax.forward(logits)
     model.backward(y, y_pred)
 
@@ -225,12 +237,12 @@ def gradient_check(model, X, y, epsilon=1e-6):
 
             # f(w + eps)
             layer.W[i, j] = original_value + epsilon
-            plus_logits = model.forward(X)
+            plus_logits,_ = model.forward(X)
             plus_loss = model.loss_fn.forward(y, Softmax.forward(plus_logits))
 
             # f(w - eps)
             layer.W[i, j] = original_value - epsilon
-            minus_logits = model.forward(X)
+            minus_logits,_ = model.forward(X)
             minus_loss = model.loss_fn.forward(y, Softmax.forward(minus_logits))
 
             numerical_grad[i, j] = (plus_loss - minus_loss) / (2 * epsilon)

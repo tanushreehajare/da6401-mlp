@@ -1,5 +1,5 @@
 program: src/train.py
-project: sweeps-mlp-final
+project: sweeps-mlp-last
 method: random
 
 metric:

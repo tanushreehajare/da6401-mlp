@@ -14,7 +14,7 @@ class MeanSquaredError:
     @staticmethod
     def derivative(y_true, y_pred):
         m = y_true.shape[0]
-        return (2/m) * (y_pred - y_true)
+        return x2 * (y_pred - y_true)
 
 
 class CrossEntropy:
@@ -28,4 +28,4 @@ class CrossEntropy:
     @staticmethod
     def derivative(y_true, y_pred):
         m = y_true.shape[0]
-        return (y_pred - y_true) / m
+        return (y_pred - y_true) 

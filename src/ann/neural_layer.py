@@ -46,11 +46,8 @@ class LinearLayer:
         """
         m = self.X.shape[0]
 
-        # Gradients
-        self.grad_W = (self.X.T @ dZ) 
-        self.grad_b = np.sum(dZ, axis=0, keepdims=True) 
+        self.grad_W = (self.X.T @ dZ) / m
+        self.grad_b = np.sum(dZ, axis=0, keepdims=True) / m
 
-        # Gradient for previous layer
         dX = dZ @ self.W.T
-
         return dX

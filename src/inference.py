@@ -34,7 +34,7 @@ def parse_arguments():
     parser.add_argument("--batch_size", type=int, required=True)
 
     parser.add_argument("--num_layers", type=int, required=True)
-    parser.add_argument("--hidden_size", type=int, required=True)
+    parser.add_argument("--hidden_size", nargs="+", type=int, required=True)
 
     parser.add_argument("--activation", type=str, required=True,
                         choices=["relu", "sigmoid", "tanh"])
@@ -42,8 +42,7 @@ def parse_arguments():
     parser.add_argument("--loss", type=str, default="cross_entropy",
                         choices=["cross_entropy", "mse"])
 
-    parser.add_argument("--weight_init", type=str, default="random",
-                        choices=["xavier"])
+    parser.add_argument("--weight_init", type=str, choices=["xavier","random"])
 
     parser.add_argument("--learning_rate", type=float, default=0.001)
 
@@ -107,7 +106,7 @@ def evaluate_model(model, X_test, y_test, y_test_onehot):
     TODO: Return Dictionary - logits, loss, accuracy, f1, precision, recall
     """
 
-    logits = model.forward(X_test)
+    logits,_ = model.forward(X_test)
     probs = Softmax.forward(logits)
     y_pred = np.argmax(probs, axis=1)
 
@@ -166,7 +165,7 @@ def main():
     TODO: Must return Dictionary - logits, loss, accuracy, f1, precision, recall
     """
     args = parse_arguments()
-    wandb.init(project="sweeps-mlp-final")
+    wandb.init(project="sweeps-mlp-last")
 
     X_test, y_test, y_test_onehot = load_data(args.dataset)
 

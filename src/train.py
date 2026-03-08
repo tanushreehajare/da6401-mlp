@@ -11,22 +11,22 @@ from sklearn.datasets import fetch_openml
 from sklearn.model_selection import train_test_split
 from ann.activations import Softmax
 from ann.neural_network import NeuralNetwork
-from ann.optimizers import SGD, Momentum, NAG, RMSProp, Adam, Nadam
+from ann.optimizers import SGD, Momentum, NAG, RMSProp
 
 import matplotlib.pyplot as plt
 
 import json
 
-BEST_MODEL_PATH = "src/best_model.npy"
-BEST_CONFIG_PATH = "src/best_config.json"
-BEST_SCORE_PATH = "src/best_score.txt"
+BEST_MODEL_PATH = "best_model.npy"
+BEST_CONFIG_PATH = "best_config.json"
+BEST_SCORE_PATH = "best_score.txt"
 
 def parse_arguments():
 
     parser = argparse.ArgumentParser(description="Train a neural network")
 
-    parser.add_argument("-wb", "--wandb_project", type=str,
-                    default="sweeps-mlp-final")
+    parser.add_argument("-wp", "--wandb_project", type=str,
+                    default="sweeps-mlp-last")
 
     parser.add_argument("-d","--dataset", type=str, required=True,
                         choices=["mnist", "fashion_mnist"])
@@ -41,7 +41,7 @@ def parse_arguments():
                         choices=["sgd", "momentum", "nag",
                                  "rmsprop"])
     
-    parser.add_argument("-sz", "--hidden_size", type=int, required=True)
+    parser.add_argument("-sz", "--hidden_size", nargs="+", type=int, required=True)
 
     parser.add_argument("-nhl", "--num_layers", type=int, required=True)
 
@@ -156,7 +156,7 @@ def main_with_args(args):
 
     from sklearn.metrics import f1_score
 
-    logits = model.forward(X_test)
+    logits,_ = model.forward(X_test)
     probs = Softmax.forward(logits)
     y_pred = np.argmax(probs, axis=1)
     y_true = np.argmax(y_test, axis=1)
@@ -206,7 +206,7 @@ def main():
     # Evaluate
     from sklearn.metrics import f1_score
 
-    logits = model.forward(X_test)
+    logits,_ = model.forward(X_test)
     probs = Softmax.forward(logits)
     y_pred = np.argmax(probs, axis=1)
     y_true = np.argmax(y_test, axis=1)
@@ -227,12 +227,8 @@ def main():
     if test_f1 > best_score:
         print("New Best Model Found! Saving...")
 
-        weights = {}
-        for idx, layer in enumerate(model.layers):
-            weights[f"W{idx}"] = layer.W
-            weights[f"b{idx}"] = layer.b
-
-        np.save(BEST_MODEL_PATH, weights)
+        best_weights = model.get_weights()
+        np.save(BEST_MODEL_PATH, best_weights)
 
         with open(BEST_SCORE_PATH, "w") as f:
             f.write(str(test_f1))
