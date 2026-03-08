@@ -111,11 +111,9 @@ class NeuralNetwork:
 
         Returns:
             logits : Raw linear outputs of the last layer, shape (batch_size, 10).
-            probs  : Softmax probabilities derived from logits, shape (batch_size, 10).
+                     Softmax is NOT applied — the model returns logits as required.
 
-        NOTE: The model returns LOGITS (linear combinations) as required.
-              Softmax probabilities are returned as the second element of the tuple
-              for convenience (used internally and by the test harness).
+        Softmax probabilities are available via self.probs after each forward call.
         """
         A = X
         self.Z_cache = []
@@ -132,10 +130,10 @@ class NeuralNetwork:
         Z_out = self.layers[-1].forward(A)
         self.Z_cache.append(Z_out)
 
-        # Compute softmax probabilities (returned but NOT stored as activations)
-        probs = Softmax.forward(Z_out)
+        # Store probs internally so evaluate/train can use them without re-computing
+        self.probs = Softmax.forward(Z_out)
 
-        return Z_out, probs   # <-- tuple: (logits, probs)
+        return Z_out   # <-- logits only (as required by autograder)
 
     # ------------------------------------------------------------------
     # Backward pass
@@ -231,7 +229,7 @@ class NeuralNetwork:
                 y_batch = y_train[i: i + batch_size]
 
                 # Forward
-                logits, _ = self.forward(X_batch)   # unpack tuple
+                logits = self.forward(X_batch)   # returns logits; self.probs updated
 
                 # ---- Q2.5: Activation histograms (first few steps of epoch 0) ----
                 if epoch == 0 and i < 50 and len(self.A_cache) > 1:
@@ -287,8 +285,8 @@ class NeuralNetwork:
         Returns:
             Accuracy as a float in [0, 1].
         """
-        logits, probs = self.forward(X)   # unpack tuple
-        predictions = np.argmax(probs, axis=1)
+        self.forward(X)
+        predictions = np.argmax(self.probs, axis=1)
         true_labels = np.argmax(y, axis=1)
         return float(np.mean(predictions == true_labels))
 
@@ -303,7 +301,7 @@ def gradient_check(model, X, y, epsilon=1e-6):
 
     A difference < 1e-5 indicates the backward pass is correct.
     """
-    logits, _ = model.forward(X)
+    logits = model.forward(X)
     model.backward(y, logits)
 
     layer = model.layers[0]
@@ -315,11 +313,11 @@ def gradient_check(model, X, y, epsilon=1e-6):
             orig = layer.W[i, j]
 
             layer.W[i, j] = orig + epsilon
-            plus_logits, _ = model.forward(X)
+            plus_logits = model.forward(X)
             plus_loss = model.loss_fn.forward(y, plus_logits)
 
             layer.W[i, j] = orig - epsilon
-            minus_logits, _ = model.forward(X)
+            minus_logits = model.forward(X)
             minus_loss = model.loss_fn.forward(y, minus_logits)
 
             numerical_grad[i, j] = (plus_loss - minus_loss) / (2 * epsilon)

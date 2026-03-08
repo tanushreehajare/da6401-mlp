@@ -140,8 +140,8 @@ def main_with_args(args):
                 epochs=args.epochs, batch_size=args.batch_size)
 
     # Final evaluation
-    logits, probs = model.forward(X_test)
-    y_pred  = np.argmax(probs, axis=1)
+    logits = model.forward(X_test)
+    y_pred  = np.argmax(model.probs, axis=1)
     y_true  = np.argmax(y_test, axis=1)
     test_accuracy = float(np.mean(y_pred == y_true))
     test_f1       = float(f1_score(y_true, y_pred, average="macro"))
@@ -182,8 +182,8 @@ def main():
                 epochs=args.epochs, batch_size=args.batch_size)
 
     # ------- Evaluate -------
-    logits, probs = model.forward(X_test)   # forward now returns (logits, probs)
-    y_pred         = np.argmax(probs, axis=1)
+    logits        = model.forward(X_test)   # returns logits; self.probs updated
+    y_pred         = np.argmax(model.probs, axis=1)
     y_true         = np.argmax(y_test, axis=1)
     test_accuracy  = float(np.mean(y_pred == y_true))
     test_f1        = float(f1_score(y_true, y_pred, average="macro"))

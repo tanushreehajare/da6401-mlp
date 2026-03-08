@@ -96,8 +96,8 @@ def evaluate_model(model, X_test, y_test, y_test_onehot):
 
     Returns a dict with keys: logits, loss, accuracy, precision, recall, f1.
     """
-    logits, probs = model.forward(X_test)   # forward returns (logits, probs)
-    y_pred = np.argmax(probs, axis=1)
+    logits = model.forward(X_test)   # returns logits; model.probs updated
+    y_pred = np.argmax(model.probs, axis=1)
 
     accuracy  = accuracy_score(y_test, y_pred)
     precision = precision_score(y_test, y_pred, average="macro", zero_division=0)
