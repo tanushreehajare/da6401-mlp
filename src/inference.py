@@ -42,7 +42,9 @@ def parse_arguments():
     parser.add_argument("--loss", type=str, default="cross_entropy",
                         choices=["cross_entropy", "mse"])
 
-    parser.add_argument("--weight_init", type=str, choices=["xavier","random"])
+    parser.add_argument("--weight_init", type=str,
+                    default="xavier",
+                    choices=["xavier","random"])
 
     parser.add_argument("--learning_rate", type=float, default=0.001)
 
