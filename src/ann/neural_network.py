@@ -23,13 +23,21 @@ class NeuralNetwork:
         """
         self.num_layers = cli_args.num_layers
 
-        # Support both a list of sizes and a single integer for hidden_size
+        # Support: single int, list of one int (sweep sends --hidden_size=64 -> [64]),
+        # or a full list matching num_layers.
         if isinstance(cli_args.hidden_size, list):
-            assert len(cli_args.hidden_size) == cli_args.num_layers, (
-                "Length of hidden_size list must equal num_layers"
-            )
-            self.hidden_sizes = cli_args.hidden_size
+            if len(cli_args.hidden_size) == 1:
+                # Sweep passes a single value; replicate across all hidden layers
+                self.hidden_sizes = cli_args.hidden_size * cli_args.num_layers
+            elif len(cli_args.hidden_size) == cli_args.num_layers:
+                self.hidden_sizes = cli_args.hidden_size
+            else:
+                raise ValueError(
+                    f"hidden_size length ({len(cli_args.hidden_size)}) must be "
+                    f"1 or equal to num_layers ({cli_args.num_layers})"
+                )
         else:
+            # plain integer (e.g. from argparse without nargs="+")
             self.hidden_sizes = [cli_args.hidden_size] * cli_args.num_layers
 
         self.activation_name = cli_args.activation
