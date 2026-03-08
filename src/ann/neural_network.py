@@ -143,13 +143,12 @@ class NeuralNetwork:
 
             grad_W_list.append(self.layers[i].grad_W)
             grad_b_list.append(self.layers[i].grad_b)
+        
+        grad_W_list.reverse()
+        grad_b_list.reverse()
 
         self.grad_W = np.empty(len(grad_W_list), dtype=object)
         self.grad_b = np.empty(len(grad_b_list), dtype=object)
-
-        for i,(gw,gb) in enumerate(zip(grad_W_list,grad_b_list)):
-            self.grad_W[i] = gw
-            self.grad_b[i] = gb
 
         return self.grad_W, self.grad_b
     
@@ -254,12 +253,12 @@ def gradient_check(model, X, y, epsilon=1e-6):
             # f(w + eps)
             layer.W[i, j] = original_value + epsilon
             plus_logits = model.forward(X)
-            plus_loss = model.loss_fn.forward(y, Softmax.forward(plus_logits))
+            plus_loss = model.loss_fn.forward(y, plus_logits)
 
             # f(w - eps)
             layer.W[i, j] = original_value - epsilon
             minus_logits = model.forward(X)
-            minus_loss = model.loss_fn.forward(y, Softmax.forward(minus_logits))
+            minus_loss = model.loss_fn.forward(y, minus_logits)
 
             numerical_grad[i, j] = (plus_loss - minus_loss) / (2 * epsilon)
 
