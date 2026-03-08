@@ -118,22 +118,32 @@ class NeuralNetwork:
         Returns:
             return grad_w, grad_b
         """
+    
+
+        grad_W_list = []
+        grad_b_list = []
+
         # Initial gradient from loss
         dZ = self.loss_fn.derivative(y_true, y_pred)
 
         # Output layer
         dA = self.layers[-1].backward(dZ)
 
-        # Hidden layers (reverse order)
+        grad_W_list.append(self.layers[-1].grad_W)
+        grad_b_list.append(self.layers[-1].grad_b)
+
+        # Hidden layers
         for i in reversed(range(len(self.layers) - 1)):
 
             Z = self.Z_cache[i]
-
             dZ = dA * self.activation.derivative(Z)
 
             dA = self.layers[i].backward(dZ)
 
-        return dA
+            grad_W_list.append(self.layers[i].grad_W)
+            grad_b_list.append(self.layers[i].grad_b)
+
+        return grad_W_list, grad_b_list
     
     def update_weights(self):
         """
