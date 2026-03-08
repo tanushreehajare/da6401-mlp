@@ -119,21 +119,23 @@ class NeuralNetwork:
             return grad_w, grad_b
         """
 
-        grad_W_list = []
-        grad_b_list = []
-            
+        # derivative of loss wrt logits
         dZ = self.loss_fn.derivative(y_true, y_pred)
 
-        # Output layer
-        dA = self.layers[-1].backward(dZ)
+        grad_W_list = []
+        grad_b_list = []
 
+        # output layer
+        dA = self.layers[-1].backward(dZ)
         grad_W_list.append(self.layers[-1].grad_W)
         grad_b_list.append(self.layers[-1].grad_b)
 
-        # Hidden layers
-        for i in reversed(range(len(self.layers) - 1)):
+        # hidden layers
+        for i in reversed(range(len(self.layers)-1)):
 
             Z = self.Z_cache[i]
+
+            # apply activation derivative
             dZ = dA * self.activation.derivative(Z)
 
             dA = self.layers[i].backward(dZ)
@@ -141,7 +143,15 @@ class NeuralNetwork:
             grad_W_list.append(self.layers[i].grad_W)
             grad_b_list.append(self.layers[i].grad_b)
 
-        return grad_W_list, grad_b_list
+        # convert to object arrays (autograder requirement)
+        self.grad_W = np.empty(len(grad_W_list), dtype=object)
+        self.grad_b = np.empty(len(grad_b_list), dtype=object)
+
+        for i,(gw,gb) in enumerate(zip(grad_W_list,grad_b_list)):
+            self.grad_W[i] = gw
+            self.grad_b[i] = gb
+
+        return self.grad_W, self.grad_b
     
     def update_weights(self):
         """
