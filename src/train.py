@@ -17,9 +17,9 @@ import matplotlib.pyplot as plt
 
 import json
 
-BEST_MODEL_PATH = "best_model.npy"
-BEST_CONFIG_PATH = "best_config.json"
-BEST_SCORE_PATH = "best_score.txt"
+BEST_MODEL_PATH = "src/best_model.npy"
+BEST_CONFIG_PATH = "src/best_config.json"
+BEST_SCORE_PATH = "src/best_score.txt"
 
 def parse_arguments():
 
